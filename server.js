@@ -31,12 +31,19 @@ mongoose
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
+app.get("/", (req, res) => {
+  res.send("Carseller API is running...");
+});
+
 app.get("/test", (req, res) => {
   res.send("Server Test OK");
 });
+
 
 const PORT = process.env.PORT || 9000;
 
 app.listen(PORT, () => {
   console.log(`Server Running on Port ${PORT}`);
 });
+
+module.exports = app;
